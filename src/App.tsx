@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import FileInput from "./Components/FileInput";
+import { FileUpload } from "./Components/FileInput";
 
 function App() {
   return (
     <>
-      <FileInput multiple={true} />
+      <FileUpload
+        width={"200px"}
+        accept={["*.png", "*.jpeg"]}
+        onChange={(e) => {
+          console.log(e.target.files);
+        }}
+      />
     </>
   );
 }
